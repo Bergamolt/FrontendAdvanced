@@ -6,6 +6,11 @@ export type BuildPaths = {
   template: string
 }
 
+export type BuildEnv = {
+  mode: BuildMode
+  port: number
+}
+
 export type BuildDevServer = {
   port: number
 }
