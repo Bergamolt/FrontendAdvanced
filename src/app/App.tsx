@@ -1,10 +1,11 @@
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import cx from 'classyfier'
-import { HomePageAsync } from './pages/Home'
-import { AboutPageAsync } from './pages/About'
+import { HomePage } from 'pages/Home'
+import { AboutPage } from 'pages/About'
+import { useTheme } from 'app/providers/ThemeProvider'
 import './styles/index.scss'
-import { useTheme } from './theme/context'
+
 
 export function App() {
   const { theme, toggleTheme } = useTheme()
@@ -16,8 +17,8 @@ export function App() {
       <Link to='/about'>About</Link>
       <Suspense fallback={<span>Loading...</span>}>
         <Routes>
-          <Route path='/' element={<HomePageAsync />} />
-          <Route path='/about' element={<AboutPageAsync />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
         </Routes>
       </Suspense>
     </div>

@@ -1,15 +1,14 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BuildOptions } from './types/config'
 
 export function buildPlugins({
-  template,
-}: {
-  template: string
-}): webpack.WebpackPluginInstance[] {
+  paths,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
-      template,
+      template: paths.template,
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',

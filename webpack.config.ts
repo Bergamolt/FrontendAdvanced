@@ -10,9 +10,10 @@ export default (env: BuildEnv) => {
   return buildWebpackConfig({
     mode,
     paths: {
-      entry: path.resolve(__dirname, 'src', 'index.tsx'),
+      entry: path.resolve(__dirname, 'src/app', 'index.tsx'),
       output: path.resolve(__dirname, 'build'),
       template: path.resolve(__dirname, 'public', 'index.html'),
+      src: path.resolve(__dirname, 'src')
     },
     isDev,
     devServer: {
