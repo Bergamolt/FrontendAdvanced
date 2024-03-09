@@ -1,0 +1,9 @@
+.root {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary-text-color);
+  }
+}

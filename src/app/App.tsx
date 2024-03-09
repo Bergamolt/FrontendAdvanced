@@ -1,20 +1,21 @@
 import { Suspense } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import cx from 'classyfier'
+import { useTheme } from 'app/providers/ThemeProvider'
 import { HomePage } from 'pages/Home'
 import { AboutPage } from 'pages/About'
-import { useTheme } from 'app/providers/ThemeProvider'
+import { Navbar } from 'widgets/Navbar'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import './styles/index.scss'
 
 
 export function App() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <div className={cx('app', theme)}>
-      <button onClick={toggleTheme}>Change theme</button>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
+      <Navbar />
+      <ThemeSwitcher />
       <Suspense fallback={<span>Loading...</span>}>
         <Routes>
           <Route path='/' element={<HomePage />} />

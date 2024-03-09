@@ -29,5 +29,11 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   }
 
-  return [styleLoader, tsLoader]
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack'],
+  }
+
+  return [styleLoader, tsLoader, svgLoader]
 }
