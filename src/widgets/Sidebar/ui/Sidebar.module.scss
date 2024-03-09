@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--invert-bg-color);
+  overflow: hidden;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.button {
+  color: var(--invert-primary-color);
+}

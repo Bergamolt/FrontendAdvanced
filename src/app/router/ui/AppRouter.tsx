@@ -1,9 +1,8 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routeConfig } from 'shared/config/routeConfig'
-import './styles/index.scss'
 
-export function AppRouter() {
+export default function AppRouter() {
   return (
     <Suspense fallback={<span>Loading...</span>}>
       <Routes>
