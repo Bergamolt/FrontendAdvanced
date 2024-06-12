@@ -3,6 +3,7 @@ import classes from './Sidebar.module.scss'
 import { Button } from 'shared/ui/Button'
 import { ThemeSwitcher } from '../../ThemeSwitcher'
 import { useState } from 'react'
+import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher'
 
 type NavbarProps = {
   className?: string
@@ -15,9 +16,14 @@ export function Sidebar(props: NavbarProps) {
   const handleToggle = () => setCollapsed(!collapsed)
 
   return (
-    <div className={cx(classes.root, collapsed && classes.collapsed, className)}>
-      <Button className={classes.button} onClick={handleToggle}>Toggle</Button>
+    <div
+      className={cx(classes.root, collapsed && classes.collapsed, className)}
+    >
+      <Button className={classes.button} onClick={handleToggle}>
+        Toggle
+      </Button>
       <ThemeSwitcher />
+      <LanguageSwitcher />
     </div>
   )
 }
