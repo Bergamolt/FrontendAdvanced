@@ -29,11 +29,17 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   }
 
+  const babelLoader = {
+    test: /\.(js|jsx|ts|tsx)$/,
+    use: 'babel-loader',
+    exclude: /node_modules/,
+  }
+
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
   }
 
-  return [styleLoader, tsLoader, svgLoader]
+  return [styleLoader, babelLoader, tsLoader, svgLoader]
 }

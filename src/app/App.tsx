@@ -10,16 +10,14 @@ export function App() {
   const { theme } = useTheme()
 
   return (
-    <Suspense fallback='loading...'>
-      <div className={cx('app', theme)}>
-        <Navbar />
-        <main className='app-content'>
-          <Sidebar />
-          <div className='app-content-wrapper'>
-            <AppRouter />
-          </div>
-        </main>
-      </div>
-    </Suspense>
+    <div className={cx('app', theme)}>
+      <Navbar />
+      <main className='app-content'>
+        <Sidebar />
+        <div className='app-content-wrapper'>
+          <AppRouter />
+        </div>
+      </main>
+    </div>
   )
 }
