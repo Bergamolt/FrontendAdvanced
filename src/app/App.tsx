@@ -13,9 +13,9 @@ export function App() {
     <Suspense fallback='loading...'>
       <div className={cx('app', theme)}>
         <Navbar />
-        <main className='app__content'>
+        <main className='app-content'>
           <Sidebar />
-          <div className='app__wrapper'>
+          <div className='app-content-wrapper'>
             <AppRouter />
           </div>
         </main>
