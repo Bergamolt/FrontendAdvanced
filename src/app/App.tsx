@@ -5,7 +5,6 @@ import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import AppRouter from './router'
 import './styles/index.scss'
-import { useTranslation } from 'react-i18next'
 
 export function App() {
   const { theme } = useTheme()
