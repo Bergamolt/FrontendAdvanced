@@ -1,4 +1,3 @@
-import { Suspense } from 'react'
 import cx from 'classyfier'
 import { useTheme } from 'app/providers/ThemeProvider'
 import { Navbar } from 'widgets/Navbar'
