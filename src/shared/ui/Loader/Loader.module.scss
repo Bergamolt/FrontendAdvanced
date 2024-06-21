@@ -16,16 +16,37 @@
 @keyframes l1 {
   0%,
   10% {
-    background-size: 8px 0, 8px 4px, 8px 4px;
-    background-position: 0 50%, 0 calc(50% - 2px), 0 calc(50% + 2px), 50% 50%,
-      50% calc(50% - 2px), 50% calc(50% + 2px), 100% 50%, 100% calc(50% - 2px),
+    background-size:
+      8px 0,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 calc(50% - 2px),
+      0 calc(50% + 2px),
+      50% 50%,
+      50% calc(50% - 2px),
+      50% calc(50% + 2px),
+      100% 50%,
+      100% calc(50% - 2px),
       100% calc(50% + 2px);
   }
 
   90%,
   100% {
-    background-size: 8px 100%, 8px 4px, 8px 4px;
-    background-position: 0 50%, 0 -2px, 0 calc(100% + 2px), 50% 50%, 50% -2px,
-      50% calc(100% + 2px), 100% 50%, 100% -2px, 100% calc(100% + 2px);
+    background-size:
+      8px 100%,
+      8px 4px,
+      8px 4px;
+    background-position:
+      0 50%,
+      0 -2px,
+      0 calc(100% + 2px),
+      50% 50%,
+      50% -2px,
+      50% calc(100% + 2px),
+      100% 50%,
+      100% -2px,
+      100% calc(100% + 2px);
   }
 }

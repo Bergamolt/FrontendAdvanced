@@ -2,10 +2,18 @@ import { ButtonHTMLAttributes } from 'react'
 import cx from 'classyfier'
 import classes from './Button.module.scss'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  mode?: 'outlined'
+}
 
 export function Button(props: ButtonProps) {
-  const { className, ...otherProps } = props
+  const { className, mode, ...otherProps } = props
 
-  return <button className={cx(classes.root, className)} {...otherProps} />
+  return (
+    <button
+      data-testid='button'
+      className={cx(classes.root, classes[mode], className)}
+      {...otherProps}
+    />
+  )
 }

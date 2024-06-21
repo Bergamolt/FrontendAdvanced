@@ -14,3 +14,9 @@
 .root:hover {
   background-color: var(--secondary-color);
 }
+
+.outlined {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}

@@ -1,7 +1,7 @@
 import cx from 'classyfier'
 import classes from './Sidebar.module.scss'
 import { Button } from 'shared/ui/Button'
-import { ThemeSwitcher } from '../../ThemeSwitcher'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { useState } from 'react'
 import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
@@ -19,9 +19,14 @@ export function Sidebar(props: NavbarProps) {
 
   return (
     <div
+      data-testid='sidebar'
       className={cx(classes.root, collapsed && classes.collapsed, className)}
     >
-      <Button className={classes.button} onClick={handleToggle}>
+      <Button
+        data-testid='toggle-button'
+        className={classes.button}
+        onClick={handleToggle}
+      >
         {t('Toggle')}
       </Button>
       <ThemeSwitcher />
