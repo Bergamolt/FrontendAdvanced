@@ -1,0 +1,32 @@
+name: GitHub Actions
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  integration:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [18.x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install --force
+      - name: Production Build
+        run: npm run build
+      - name: Run ESLint
+        run: npm run lint
+      - name: Run Stylelint
+        run: npm run stylelint
+      - name: Run Unit Tests
+        run: npm run test:unit
+      - name: Run UI tests
+        run: npm run test:ui:ci
