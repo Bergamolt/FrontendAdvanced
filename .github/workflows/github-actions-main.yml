@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Commit
         uses: actions/checkout@v2
       - name: Install Dependencies
-        run: npm install
+        run: npm install --force
       - name: Production Build
         run: npm run build
       - name: Run ESLint
