@@ -10,10 +10,19 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme
   className?: string
+  underline?: boolean
 }
 
 export function AppLink(props: AppLinkProps) {
   const { theme = AppLinkTheme.LIGHT, className, ...otherProps } = props
 
-  return <Link {...otherProps} className={cx(classes[theme], className)} />
+  return (
+    <Link
+      style={{
+        textDecoration: props.underline ? 'underline' : 'none',
+      }}
+      {...otherProps}
+      className={cx(classes[theme], className)}
+    />
+  )
 }

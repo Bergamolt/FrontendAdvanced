@@ -1,14 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Sidebar } from './Sidebar'
-import i18n from 'shared/i18n/config/configForTests'
-import { I18nextProvider } from 'react-i18next'
+import { ComponentRender } from 'shared/jest/ComponentRender'
 
 describe('Sidebar', () => {
   it('renders the Sidebar component', () => {
     render(
-      <I18nextProvider i18n={i18n}>
-        <Sidebar />)
-      </I18nextProvider>
+      <ComponentRender>
+        <Sidebar />
+      </ComponentRender>
     )
 
     const sidebar = screen.getByTestId('sidebar')
@@ -16,7 +15,11 @@ describe('Sidebar', () => {
   })
 
   it('toggles the collapsed state when the button is clicked', () => {
-    render(<Sidebar />)
+    render(
+      <ComponentRender>
+        <Sidebar />
+      </ComponentRender>
+    )
     const button = screen.getByTestId('toggle-button')
     const sidebar = screen.getByTestId('sidebar')
 

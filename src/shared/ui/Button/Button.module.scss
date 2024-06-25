@@ -20,3 +20,19 @@
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
+
+.small {
+  height: var(--font-line-s);
+}
+
+.medium {
+  height: var(--font-line-m);
+}
+
+.large {
+  height: var(--font-line-l);
+}
+
+.xlarge {
+  height: var(--font-line-xl);
+}
